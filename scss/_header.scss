@@ -1,0 +1,223 @@
+.header {
+    // .header__container
+    &__container {
+        min-height: toRem(160);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        column-gap: toRem(50);
+        @media (max-width: toEm($tablet)) {
+            min-height: toRem(100);
+        }
+        @media (max-width: toEm($mobile)) {
+            position: relative;
+            column-gap: toRem(30);
+            padding: toRem(5) toRem(15);
+            &::after {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: #fff;
+            }
+        }
+        @media (max-width: toEm($mobileSmall)) {
+            min-height: toRem(80);
+            column-gap: toRem(20);
+        }
+    }
+    // .header__logo
+    &__logo {
+        position: relative;
+        z-index: 2;
+        flex: 0 0 auto;
+        @media (max-width: toEm($mobileSmall)) {
+            flex-direction: column;
+        }
+    }
+    // .header__menu
+    &__menu {
+    }
+    // .header__link
+    &__link {
+        position: relative;
+        z-index: 2;
+        flex: 0 0 auto;
+        color: #ff7235;
+        min-width: toRem(160);
+        padding: toRem(15);
+        text-align: center;
+        border: toRem(1) solid #ff7235;
+        border-radius: toRem(8);
+        transition: all 0.3s;
+        @media (any-hover: hover) {
+            &:hover {
+                background-color: #ff7235;
+                color: #fff;
+            }
+        }
+        @media (max-width: toEm($mobile)) {
+            margin-left: auto;
+            flex-shrink: 1;
+        }
+        @media (max-width: toEm($mobileSmall)) {
+            flex: 1 1 auto;
+        }
+    }
+}
+// =============================================================================================================
+
+.logo {
+    font-weight: 500;
+    font-size: toRem(23);
+    display: flex;
+    align-items: center;
+    gap: toRem(12);
+    transition: all 0.3s;
+    @media (any-hover: hover) {
+        &:hover {
+            color: #ff7235;
+            span {
+                background-color: #292830;
+            }
+        }
+    }
+    span {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: toRem(40);
+        height: toRem(40);
+        border-radius: 50%;
+        background-color: #ff7235;
+        font-weight: 700;
+        font-size: toRem(24);
+        color: #fff;
+        transition: all 0.3s;
+        @media (max-width: toEm($mobileSmall)) {
+            width: toRem(35);
+            height: toRem(35);
+            font-size: toRem(19);
+        }
+    }
+    @media (max-width: toEm($mobileSmall)) {
+        gap: toRem(6);
+        font-size: toRem(18);
+    }
+}
+
+// =============================================================================================================
+
+.menu {
+    @media (max-width: toEm($mobile)) {
+        position: fixed;
+        top: 0;
+        left: 100%;
+        width: 100%;
+        height: 100%;
+        background-color: #ff7235;
+        padding: toRem(140) toRem(30);
+        overflow: auto;
+        transition: all 0.3s;
+        .menu-open & {
+            left: 0;
+        }
+        @media (max-width: toEm($mobileSmall)) {
+            padding: toRem(120) toRem(20);
+        }
+    }
+    // .menu__list
+    &__list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        column-gap: toRem(40);
+        row-gap: toRem(10);
+        @media (max-width: toEm($tablet)) {
+            column-gap: toRem(30);
+        }
+        @media (max-width: toEm($mobile)) {
+            flex-direction: column;
+            row-gap: toRem(45);
+            align-items: flex-end;
+        }
+    }
+    // .menu__item
+    &__item {
+    }
+    // .menu__link
+    &__link {
+        position: relative;
+        &::after {
+            content: "";
+            position: absolute;
+            bottom: toRem(-3);
+            left: 50%;
+            width: 0%;
+            height: toRem(2);
+            background-color: #ff7235;
+            transition: all 0.3s;
+        }
+        @media (any-hover: hover) {
+            &:hover::after {
+                width: 100%;
+                left: 0;
+            }
+        }
+        @media (max-width: toEm($mobile)) {
+            font-size: toRem(26);
+            font-weight: 500;
+        }
+    }
+}
+
+// =============================================================================================================
+
+.menu-icon {
+    display: none;
+    @media (max-width: toRem($mobile)) {
+        position: relative;
+        z-index: 2;
+        display: block;
+        flex: 0 0 toRem(30);
+        width: toRem(30);
+        height: toRem(20);
+        position: relative;
+    }
+    span,
+    &::before,
+    &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        width: 100%;
+        height: toRem(2);
+        background-color: #292830;
+        transition: all 0.5s;
+    }
+    span {
+        top: 50%;
+        margin-top: toRem(-1);
+        .menu-open & {
+            transform: scale(0);
+        }
+    }
+    &::before {
+        top: 0;
+        .menu-open & {
+            top: 50%;
+            transform: rotate(45deg);
+            margin-top: toRem(-1);
+        }
+    }
+    &::after {
+        bottom: 0;
+        .menu-open & {
+            bottom: 50%;
+            transform: rotate(-45deg);
+            margin-bottom: toRem(-1);
+        }
+    }
+}

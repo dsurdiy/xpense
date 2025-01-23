@@ -1,16 +1,3 @@
-// Налаштування адаптивної властивості (функції) --- якщо буду використовувати
-// Мінімальна ширина сторінки
-// $minWidth: 320;
-// Ширина полотна
-// $maxWidth: 1440;
-// Ширина обмежуючого контейнера (0 = немає обмеження)
-// $maxWidthContainer: 1240;
-// Загальний відступ у контейнера
-// (30 = по 15рх ліворуч і праворуч, 0 = немає відступу)
-// $containerPadding: 30;
-// Ширина спрацьовування першого брейкпоінту
-// $containerWidth: $maxWidthContainer + $containerPadding;
-
 // Fonts
 @import "fonts";
 
@@ -27,9 +14,9 @@
 @import "common";
 
 // Components
+@import "components";
 @import "header";
 @import "footer";
-@import "components";
 
 // Pages
 @import "index";

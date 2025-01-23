@@ -10,21 +10,20 @@
 }
 
 [class*="__container"] {
-   max-width: toRem(1230);
+   max-width: toRem(1140);
    margin: 0 auto;
    padding-inline: toRem(15);
 }
 
 body {
-   font-family: "Causten", sans-serif;
+   font-family: "Hind Siliguri", sans-serif;
    font-size: toRem(18);
-   color: $mainTextColor;
-   line-height: 1.5;
-   // &.menu-open {
-   //    overflow: hidden;
-   //    touch-action: none;
-   //    overscroll-behavior: none;
-   // }
+   color: #292830;
+   &.menu-open {
+      overflow: hidden;
+      touch-action: none;
+      overscroll-behavior: none;
+   }
 }
 
 // ---------------- Animation elements -------------
