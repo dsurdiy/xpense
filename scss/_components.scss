@@ -1,0 +1,79 @@
+.block-info {
+    display: grid;
+    gap: toRem(24);
+    @media (max-width: toEm($mobile)) {
+        gap: toRem(15);
+    }
+    // .block-info__sub-title
+    &__sub-title {
+        text-transform: uppercase;
+        font-size: toRem(22);
+        line-height: 163.636364%; /* 36/22 */
+        color: #bdbdbd;
+        @media (max-width: toEm($mobileSmall)) {
+            font-size: toRem(20);
+        }
+    }
+    // .block-info__wrapper
+    &__wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        gap: toRem(24);
+        @media (max-width: toEm($mobile)) {
+            gap: toRem(15);
+        }
+    }
+    // .block-info__title
+    &__title {
+        font-weight: 700;
+        font-size: toRem(96);
+        @media (max-width: toEm($pc)) {
+            font-size: toRem(90);
+        }
+        @media (max-width: toEm($tablet)) {
+            font-size: toRem(72);
+        }
+        @media (max-width: toEm($mobile)) {
+            font-size: toRem(68);
+        }
+        @media (max-width: toEm($mobileSmall)) {
+            font-size: toRem(60);
+        }
+    }
+    // .block-info__text
+    &__text {
+        font-size: toRem(24);
+        color: #bdbdbd;
+        line-height: 163%;
+        p {
+            &:not(:last-child) {
+                margin-bottom: toRem(10);
+            }
+        }
+        @media (max-width: toEm($mobile)) {
+            font-size: toRem(22);
+            line-height: 140%;
+        }
+        @media (max-width: toEm($mobileSmall)) {
+            font-size: toRem(20);
+            line-height: 120%;
+        }
+    }
+    // .block-info__link
+    &__link {
+        font-size: toRem(24);
+        color: #ff7235;
+        display: flex;
+        align-items: center;
+        gap: toRem(16);
+        &::after {
+            content: "";
+            width: toRem(18);
+            height: toRem(16);
+            background: url("../img/icons/arrow-r.svg") 0 0 / contain no-repeat;
+        }
+        @media (max-width: toEm($mobileSmall)) {
+            font-size: toRem(20);
+        }
+    }
+}
