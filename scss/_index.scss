@@ -1,12 +1,28 @@
 .page {
     // .page__hero
     &__hero {
-        padding: toRem(60) toRem(0) toRem(219);
+        padding: toRem(60) toRem(0) toRem(211);
+        @media (max-width: toEm($pc)) {
+            padding: toRem(60) toRem(0) toRem(130);
+        }
         @media (max-width: toEm($tablet)) {
             padding: toRem(60) toRem(0);
         }
     }
+    // .page__product
+    &__product {
+        margin-bottom: toRem(41);
+    }
+    // .page__brands
+    &__brands {
+        padding: toRem(41) toRem(0) toRem(66);
+        @media (max-width: toEm($mobileSmall)) {
+            padding: toRem(20) toRem(0) toRem(40);
+        }
+    }
 }
+
+// =============================================================================================================
 
 .hero {
     position: relative;
@@ -128,5 +144,91 @@
             height: 100%;
             z-index: -2;
         }
+    }
+}
+
+// =============================================================================================================
+
+.product {
+    position: relative;
+    background-color: #ff7235;
+    overflow: hidden;
+    &::before,
+    &::after {
+        content: "";
+        position: absolute;
+    }
+    &::before {
+        width: toRem(393);
+        height: toRem(433);
+        left: 0;
+        bottom: 0;
+        background: url("../img/decor/blob-left.webp") 0 0 / contain no-repeat;
+    }
+    &::after {
+        width: toRem(416);
+        height: toRem(453);
+        right: 0;
+        top: 0;
+        background: url("../img/decor/blob-right.webp") 0 0 / contain no-repeat;
+    }
+    // .product__container
+    &__container {
+        position: relative;
+        z-index: 1;
+        padding-top: toRem(87);
+        @media (max-width: toEm($mobile)) {
+            padding-top: toRem(60);
+        }
+        @media (max-width: toEm(375)) {
+            padding-top: toRem(40);
+        }
+    }
+    // .product__image
+    &__image {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+}
+
+// =============================================================================================================
+
+.brands {
+    // .brands__container
+    &__container {
+    }
+    // .brands__list
+    &__list {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        column-gap: toRem(108);
+        @media (max-width: toEm($tablet)) {
+            column-gap: toRem(60);
+        }
+        @media (max-width: toEm($mobile)) {
+            flex-wrap: wrap;
+            column-gap: toRem(80);
+            row-gap: toRem(20);
+            justify-content: center;
+        }
+        @media (max-width: toEm($mobileSmall)) {
+            column-gap: toRem(50);
+        }
+    }
+    // .brands__item
+    &__item {
+        @media (max-width: toEm($mobile)) {
+            max-width: toRem(150);
+        }
+        @media (max-width: toEm($mobileSmall)) {
+            max-width: toRem(100);
+        }
+    }
+    // .brands__logo
+    &__logo {
+        max-width: 100%;
+        object-fit: contain;
     }
 }
