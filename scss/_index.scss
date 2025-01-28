@@ -23,6 +23,19 @@
     // .page__features
     &__features {
     }
+    // .page__benefits
+    &__benefits {
+        padding: toRem(140) toRem(0);
+        @media (max-width: toEm($tablet)) {
+            padding: toRem(100) toRem(0);
+        }
+        @media (max-width: toEm($mobile)) {
+            padding: toRem(80) toRem(0);
+        }
+        @media (max-width: toEm($mobileSmall)) {
+            padding: toRem(60) toRem(0);
+        }
+    }
 }
 
 // =============================================================================================================
@@ -310,6 +323,141 @@
             width: 100%;
             height: 100%;
             z-index: -2;
+        }
+    }
+}
+
+// =============================================================================================================
+
+.benefits {
+    // .benefits__container
+    &__container {
+    }
+    // .benefits__block-info
+    &__block-info {
+        &:not(:last-child) {
+            margin-bottom: toRem(80);
+            @media (max-width: toEm($tablet)) {
+                margin-bottom: toRem(50);
+            }
+            @media (max-width: toEm($mobileSmall)) {
+                margin-bottom: toRem(35);
+            }
+        }
+        .block-info__wrapper {
+            flex-wrap: nowrap;
+            align-items: center;
+            @media (max-width: toEm($mobile)) {
+                flex-wrap: wrap;
+            }
+        }
+        .block-info__text {
+            flex: 0 0 toRem(350);
+            @media (max-width: toEm($mobile)) {
+                flex: 0 1 auto;
+            }
+        }
+    }
+    // .benefits__list
+    &__list {
+        display: flex;
+        gap: toRem(30);
+        @media (max-width: toEm($mobile)) {
+            flex-wrap: wrap;
+        }
+        @media (max-width: toEm($mobileSmall)) {
+            gap: toRem(15);
+        }
+    }
+    // .benefits__item
+    &__item {
+        flex-basis: calc((100% - 60px) / 3);
+        text-align: center;
+        border-radius: toRem(12);
+        @media (max-width: toEm($mobile)) {
+            flex: 1 1 auto;
+        }
+    }
+    // .benefits__link
+    &__link {
+        width: 100%;
+        height: 100%;
+        padding: toRem(63);
+        transition: all 0.3s;
+        @media (any-hover: hover) {
+            &:hover {
+                box-shadow: 0 0 toRem(50) 0 rgba(0, 0, 0, 0.04);
+                .benefits__arrow {
+                    transform: scale(1);
+                }
+            }
+        }
+        @media (max-width: toEm($tablet)) {
+            padding: toRem(30);
+        }
+        @media (max-width: toEm($pc)) {
+            box-shadow: 0 0 toRem(50) 0 rgba(0, 0, 0, 0.04);
+        }
+    }
+    // .benefits__icon
+    &__icon {
+        margin: 0 auto;
+        width: toRem(64);
+        height: toRem(64);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        &--yellow {
+            background-color: rgba(255, 190, 116, 0.05);
+        }
+        &--red {
+            background-color: rgba(226, 89, 139, 0.05);
+        }
+        &--blue {
+            background-color: rgba(77, 18, 238, 0.05);
+        }
+        img {
+            width: toRem(24);
+            height: toRem(24);
+            object-fit: contain;
+        }
+        &:not(:last-child) {
+            margin-bottom: toRem(24);
+            @media (max-width: toEm($mobileSmall)) {
+                margin-bottom: toRem(15);
+            }
+        }
+    }
+    // .benefits__title
+    &__title {
+        font-weight: 500;
+        font-size: toRem(30);
+        &:not(:last-child) {
+            margin-bottom: toRem(12);
+        }
+        @media (max-width: toEm($mobileSmall)) {
+            font-size: toRem(25);
+        }
+    }
+    // .benefits__text
+    &__text {
+        color: #bdbdbd;
+        font-size: toRem(14);
+        line-height: 163%;
+        &:not(:last-child) {
+            margin-bottom: toRem(32);
+            @media (max-width: toEm($mobileSmall)) {
+                margin-bottom: toRem(20);
+            }
+        }
+    }
+    // .benefits__arrow
+    &__arrow {
+        transform: scale(0);
+        transition: all 0.3s;
+        @media (max-width: toEm($pc)) {
+            transform: scale(1);
         }
     }
 }
