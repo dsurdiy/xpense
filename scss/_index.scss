@@ -20,6 +20,9 @@
             padding: toRem(20) toRem(0) toRem(40);
         }
     }
+    // .page__features
+    &__features {
+    }
 }
 
 // =============================================================================================================
@@ -232,3 +235,83 @@
         object-fit: contain;
     }
 }
+
+// =============================================================================================================
+
+.features {
+    // .features__container
+    &__container {
+        @media (max-width: toEm($mobileSmall)) {
+            padding: 0;
+        }
+    }
+    // .features__list
+    &__list {
+    }
+    // .features__item
+    &__item {
+        @media (max-width: toEm($mobileSmall)) {
+            padding: toRem(30) toRem(15);
+        }
+    }
+}
+
+.item-features {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: toRem(30);
+    padding: toRem(140) toRem(0);
+    &:nth-child(even) {
+        flex-direction: row-reverse;
+    }
+    @media (max-width: toEm($pc)) {
+        padding: toRem(100) toRem(0);
+    }
+    @media (max-width: toEm($tablet)) {
+        padding: toRem(80) toRem(0);
+    }
+    @media (max-width: toEm(870)) {
+        &::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background-color: rgba(255, 255, 255, 0.9);
+        }
+        padding: toRem(30) toRem(15);
+        margin: toRem(40) toRem(0);
+    }
+    // .item-features__block-info
+    &__block-info {
+        flex: 0 1 toRem(540);
+        .block-info__sub-title,
+        .block-info__text {
+            color: #616161;
+        }
+    }
+    // .item-features__image
+    &__image {
+        flex: 0 1 toRem(540);
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: top;
+        }
+        @media (max-width: toEm(870)) {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -2;
+        }
+    }
+}
+
+// =============================================================================================================

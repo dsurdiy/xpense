@@ -1,6 +1,7 @@
 .block-info {
     display: grid;
     gap: toRem(24);
+    justify-items: start;
     @media (max-width: toEm($mobile)) {
         gap: toRem(15);
     }
@@ -66,6 +67,9 @@
         display: flex;
         align-items: center;
         gap: toRem(16);
+        text-decoration: underline;
+        text-decoration-color: transparent;
+        transition: all 0.3s;
         &::after {
             content: "";
             width: toRem(18);
@@ -74,6 +78,11 @@
         }
         @media (max-width: toEm($mobileSmall)) {
             font-size: toRem(20);
+        }
+        @media (any-hover: hover) {
+            &:hover {
+                text-decoration-color: inherit;
+            }
         }
     }
 }
