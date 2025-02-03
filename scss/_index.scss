@@ -62,6 +62,16 @@
             padding: toRem(60) toRem(0);
         }
     }
+    // .page__banner
+    &__banner {
+        padding: toRem(120) toRem(0) toRem(90);
+        @media (max-width: toEm($pc)) {
+            padding: toRem(100) toRem(0) toRem(90);
+        }
+        @media (max-width: toEm($mobileSmall)) {
+            padding: toRem(80) toRem(0);
+        }
+    }
 }
 
 // =============================================================================================================
@@ -779,3 +789,131 @@
 }
 
 // =============================================================================================================
+
+.banner {
+    position: relative;
+    background-color: #ff7235;
+    color: #fff;
+    &::before,
+    &::after {
+        content: "";
+        position: absolute;
+    }
+    &::before {
+        width: toRem(393);
+        height: toRem(433);
+        left: 0;
+        bottom: 0;
+        background: url("../img/decor/blob-left.webp") 0 0 / contain no-repeat;
+    }
+    &::after {
+        width: toRem(416);
+        height: toRem(453);
+        right: 0;
+        top: 0;
+        background: url("../img/decor/blob-right.webp") 0 0 / contain no-repeat;
+    }
+    // .banner__container
+    &__container {
+        max-width: toRem(1325);
+        position: relative;
+        z-index: 1;
+    }
+    // .banner__title
+    &__title {
+        max-width: toRem(920);
+        margin: 0 auto;
+        font-size: toRem(72);
+        font-weight: 700;
+        text-align: center;
+        &:not(:last-child) {
+            margin-bottom: toRem(24);
+        }
+        @media (max-width: toEm($tablet)) {
+            font-size: toRem(65);
+        }
+        @media (max-width: toEm($mobile)) {
+            font-size: toRem(60);
+        }
+        @media (max-width: toEm($mobileSmall)) {
+            font-size: toRem(50);
+        }
+    }
+    // .banner__label
+    &__label {
+        max-width: toRem(920);
+        margin: 0 auto;
+        font-size: toRem(36);
+        font-weight: 500;
+        text-align: center;
+        &:not(:last-child) {
+            margin-bottom: toRem(11);
+            @media (max-width: toEm($mobile)) {
+                margin-bottom: toRem(40);
+            }
+        }
+        @media (max-width: toEm($mobile)) {
+            font-size: toRem(28);
+        }
+        @media (max-width: toEm($mobileSmall)) {
+            font-size: toRem(24);
+        }
+    }
+    // .banner__box
+    &__box {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: toRem(50);
+        @media (max-width: toEm($mobile)) {
+            justify-content: center;
+        }
+    }
+    // .banner__image
+    &__image {
+        img {
+            width: 100%;
+            object-fit: contain;
+        }
+        @media (max-width: toEm($mobile)) {
+            display: none;
+        }
+    }
+    // .banner__link
+    &__link {
+        flex: 0 0 toRem(213);
+        min-width: toRem(213);
+        min-height: toRem(60);
+        padding: toRem(15);
+        text-align: center;
+        background-color: #fff;
+        color: #ff7235;
+        font-size: toRem(22);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: toRem(14);
+        border-radius: toRem(8);
+        margin-top: toRem(50);
+        border: toRem(1) solid #fff;
+        transition: all 0.3s;
+        @media (any-hover: hover) {
+            &:hover {
+                background-color: #ff7235;
+                color: #fff;
+                path {
+                    stroke: #fff;
+                }
+            }
+        }
+        svg {
+            flex: 0 0 toRem(18);
+        }
+        path {
+            transition: stroke 0.3s;
+        }
+        @media (max-width: toEm($mobile)) {
+            margin-top: 0;
+        }
+    }
+}

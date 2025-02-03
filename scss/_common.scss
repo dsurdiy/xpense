@@ -1,4 +1,6 @@
 .wrapper {
+   max-width: toRem(1920);
+   margin: 0 auto;
    min-height: 100%;
    display: flex;
    flex-direction: column;
