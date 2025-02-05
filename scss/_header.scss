@@ -114,7 +114,7 @@
 .menu {
     @media (max-width: toEm($mobile)) {
         position: fixed;
-        z-index: 1;
+        z-index: 2;
         top: 0;
         left: 100%;
         width: 100%;
