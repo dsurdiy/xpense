@@ -30,38 +30,80 @@ body {
 
 // ---------------- Animation elements -------------
 
-// [data-watch] {
-//    transform: translate(0px, toRem(40));
-//    opacity: 0;
-//    transition: all 0.8s;
-// }
+[data-watch] {
+   transform: translateX(toRem(50));
+   opacity: 0;
+   transition: all 1s;
+}
 
-// [data-watch].active {
-//    transform: translate(0px, 0px);
-//    opacity: 1;
-// }
+[data-watch].active {
+   transform: translateX(0);
+   opacity: 1;
+}
 
-// [data-watch].hero__link {
-//    transition-property: transform, opacity, background-color;
-//    transition-duration: 0.8s, 0.8s, 0.3s;
-//    transition-delay: 0.5s, 0.5s, 0s;
-// }
+[data-watch].footer {
+   transform: translateX(0);
+   opacity: 0;
+}
+[data-watch].footer.active {
+   opacity: 1;
+}
 
-// [data-watch].hero__text {
-//    transition-delay: 0.3s;
-// }
+[data-watch].hero__content {
+   transform: translateX(toRem(-50));
+   transition-delay: 0.3s;
+}
+[data-watch].hero__content.active {
+   transform: translateX(0);
+}
 
-// [data-watch].blog__body {
-//    transition-delay: 0.5s;
-// }
+[data-watch].brands__list,
+[data-watch].benefits__list {
+   transition-delay: 0.3s;
+}
 
-// [data-watch].about__wrapper {
-//    transition-delay: 0.7s;
-// }
+[data-watch].hero__image {
+   transition-delay: 0.5s;
+}
 
-// [data-watch].works__item {
-//    transform: translate(toRem(40), 0px);
-// }
-// [data-watch].works__item.active {
-//    transform: translate(0px, 0px);
-// }
+[data-watch].product__image {
+   transform: translate(0px, toRem(100));
+}
+[data-watch].product__image.active {
+   transform: translate(0px, 0px);
+}
+
+[data-watch].features__item:nth-child(odd) {
+   transform: translateX(toRem(-150));
+   transition-duration: 1.5s;
+   transition-delay: 0.3s;
+}
+[data-watch].active.features__item:nth-child(odd) {
+   transform: translateX(0);
+}
+[data-watch].features__item:nth-child(even) {
+   transform: translateX(toRem(150));
+   transition-duration: 1.5s;
+   transition-delay: 0.3s;
+}
+[data-watch].active.features__item:nth-child(even) {
+   transform: translateX(0);
+}
+
+[data-watch].page__prices {
+   transform: translateX(toRem(-50));
+}
+[data-watch].page__prices.active {
+   transform: translateX(toRem(0));
+}
+
+[data-watch].page__testimonials {
+   transform: translateX(toRem(50));
+}
+[data-watch].page__testimonials.active {
+   transform: translateX(toRem(0));
+}
+
+[data-watch].page__banner {
+   transform: translateX(0);
+}
